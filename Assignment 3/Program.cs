@@ -25,4 +25,4 @@
             cinema.CloseCinema();
         }
     }
-}
+} 
