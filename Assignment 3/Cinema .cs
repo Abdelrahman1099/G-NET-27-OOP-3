@@ -39,7 +39,7 @@ namespace Assignment_3
 
             for (int i = 0; i < _ticketsCount; i++)
             {
-                Console.WriteLine(_tickets[i]);
+                _tickets[i].PrintTicket();
             }
         }
 
@@ -56,6 +56,14 @@ namespace Assignment_3
             _projector.close();
         }
 
+
+
+
+        public static void ProcessTicket(Ticket t)
+        {
+            Console.WriteLine("====== Process Single Ticket =======");
+            t.PrintTicket();
+        }
 
     }
 }

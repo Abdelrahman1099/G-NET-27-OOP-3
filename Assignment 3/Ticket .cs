@@ -35,5 +35,30 @@ namespace Assignment_3
 
         public static int GetTotalTickets() => _idCounter;
 
+
+
+
+
+        public virtual void PrintTicket()
+        {
+            Console.WriteLine($"Ticket #{TicketId} | {MovieName} | Price: {Price} EGP | After Tax: {PriceAfterTax} EGP");
+        }
+
+
+        public void SetPrice(decimal price) 
+        {
+            _Price = price;
+            Console.WriteLine($"Setting price directly: {_Price}");
+        }
+
+
+        public void SetPrice(decimal basePrice, decimal multiplier)
+        {
+            _Price = (basePrice * multiplier);
+
+            Console.WriteLine($"Setting price with multiplier: {basePrice} x {multiplier} = {_Price}");
+        }
+
+
     }
 }

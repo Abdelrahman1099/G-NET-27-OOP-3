@@ -19,5 +19,13 @@ namespace Assignment_3
             return base.ToString() + $" | Seat: {_SeatNumber}";
         }
 
+
+
+        public override void PrintTicket()
+        {
+            base.PrintTicket();
+            Console.WriteLine($"Seat: {_SeatNumber}");
+        }
+
     }
 }

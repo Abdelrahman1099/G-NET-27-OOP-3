@@ -21,5 +21,15 @@ namespace Assignment_3
             string imaxStatus = _Is3D ? "yes" : "No";
             return base.ToString() + $" | IMAX 3D: {imaxStatus}";
         }
+
+
+
+        public override void PrintTicket()
+        {
+            base.PrintTicket();
+            Console.WriteLine($"IMAX 3D: {_Is3D}"); 
+        }
+
+
     }
 }

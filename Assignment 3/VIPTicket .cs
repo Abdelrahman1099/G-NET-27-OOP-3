@@ -21,5 +21,14 @@ namespace Assignment_3
             string VIPStutus = _LoungeAccess ? "yes" : "No";
             return base.ToString() + $"Lounge: {_LoungeAccess} | Service Fee: {_ServiceFee}";
         }
+
+
+
+
+        public override void PrintTicket()
+        {
+            base.PrintTicket();
+            Console.WriteLine($"Lounge: {_LoungeAccess} | Service Fee: {_ServiceFee} EGP");
+        }
     }
 }
