@@ -31,5 +31,11 @@ namespace Assignment_3
         }
 
 
+        public override void Print()
+        {
+            Console.WriteLine($"[Ticket #{TicketId}] {MovieName} | IMAX | 3D: {(_Is3D ? "Yes" : "No")} | Price: {Price} | After Tax: {(double)Price * 1.14} | Booked: {(IsBooked ? "Yes" : "No")}");
+        }
+
+
     }
 }

@@ -11,9 +11,14 @@ namespace Assignment_3
         private bool _LoungeAccess { get; set; }
         private decimal _ServiceFee { get; set; } = 50;
 
-        public VIPTicket(string movieName, decimal price, bool LoungeAccess) : base(movieName, price)
+        public double _Fee { get; set; }
+        public bool _Lounge { get; set; }
+
+        public VIPTicket(string movieName, bool Lounge, double fee, decimal price, bool LoungeAccess) : base(movieName, price)
         {
             _LoungeAccess = LoungeAccess;
+            _Fee = fee;
+            _Lounge = Lounge;
         }
 
          public override string ToString() 
@@ -29,6 +34,12 @@ namespace Assignment_3
         {
             base.PrintTicket();
             Console.WriteLine($"Lounge: {_LoungeAccess} | Service Fee: {_ServiceFee} EGP");
+        }
+
+
+        public override void Print()
+        {
+            Console.WriteLine($"[Ticket #{TicketId}] {MovieName} | VIP | Lounge: {(_Lounge ? "Yes" : "No")} | Fee: {_Fee} | Price: {Price} | After Tax: {(double)Price + _Fee * 1.14} | Booked: {(IsBooked ? "Yes" : "No")}");
         }
     }
 }

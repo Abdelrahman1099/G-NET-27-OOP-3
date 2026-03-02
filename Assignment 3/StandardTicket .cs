@@ -9,7 +9,7 @@ namespace Assignment_3
     internal class StandardTicket : Ticket
     {
         public string _SeatNumber { get; set; } 
-        public StandardTicket(string movieNAme, decimal price, string seatNumber) : base (movieNAme, price)
+        public StandardTicket(string movieName, decimal price, string seatNumber) : base (movieName, price)
         {
             _SeatNumber = seatNumber;
         }
@@ -27,5 +27,10 @@ namespace Assignment_3
             Console.WriteLine($"Seat: {_SeatNumber}");
         }
 
+
+        public override void Print()
+        {
+            Console.WriteLine($"[Ticket #{TicketId}] {MovieName} | Standard | Seat: {_SeatNumber} | Price: {_Price} | After Tax: {_Price * 1.14m} | Booked: {(IsBooked ? "Yes" : "No")}");
+        }
     }
 }
