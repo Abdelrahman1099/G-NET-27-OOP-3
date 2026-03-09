@@ -21,5 +21,24 @@ namespace Assignment_3
             string imaxStatus = _Is3D ? "yes" : "No";
             return base.ToString() + $" | IMAX 3D: {imaxStatus}";
         }
+
+
+
+        public override void PrintTicket()
+        {
+            base.PrintTicket();
+            Console.WriteLine($"IMAX 3D: {_Is3D}"); 
+        }
+
+
+        public override void Print()
+        {
+            Console.WriteLine($"[Ticket #{TicketId}] {MovieName} | IMAX | 3D: {(_Is3D ? "Yes" : "No")} | Price: {Price} | After Tax: {(double)Price * 1.14} | Booked: {(IsBooked ? "Yes" : "No")}");
+        }
+
+
+
+        public override double CalculateFinalPrice() => (double)_Price * 1.14;
+
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_3
 {
-    internal class Cinema
+    internal partial class Cinema
     {
         public string _CinemaName { get; set; }
         private Ticket[] _tickets;
@@ -33,15 +33,7 @@ namespace Assignment_3
             }
         }
 
-        public void PrintAllTickets()
-        {
-            Console.WriteLine("======= All Tickets ========");
-
-            for (int i = 0; i < _ticketsCount; i++)
-            {
-                Console.WriteLine(_tickets[i]);
-            }
-        }
+       
 
         public void OpenCinema()
         {
@@ -56,6 +48,14 @@ namespace Assignment_3
             _projector.close();
         }
 
+
+
+
+        public static void ProcessTicket(Ticket t)
+        {
+            Console.WriteLine("====== Process Single Ticket =======");
+            t.PrintTicket();
+        }
 
     }
 }
