@@ -41,5 +41,9 @@ namespace Assignment_3
         {
             Console.WriteLine($"[Ticket #{TicketId}] {MovieName} | VIP | Lounge: {(_Lounge ? "Yes" : "No")} | Fee: {_Fee} | Price: {Price} | After Tax: {(double)Price + _Fee * 1.14} | Booked: {(IsBooked ? "Yes" : "No")}");
         }
+
+
+
+        public override double CalculateFinalPrice() => (double)_Price + _Fee;
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_3
 {
-    internal class Ticket : IPrintable, IBookable, ICloneable
+    internal abstract class Ticket : IPrintable, IBookable, ICloneable
     {
         private string _MovieName;
         protected decimal _Price;
@@ -23,7 +23,7 @@ namespace Assignment_3
         {
             _MovieName = movieName;
             _Price = price;
-            IsBooked = true;
+            IsBooked = false;
             _idCounter++;
             TicketId = _idCounter;
 
@@ -44,6 +44,7 @@ namespace Assignment_3
         public virtual void PrintTicket()
         {
             Console.WriteLine($"Ticket #{TicketId} | {MovieName} | Price: {Price} EGP | After Tax: {PriceAfterTax} EGP");
+            Console.WriteLine($"Booked: {(IsBooked ? "Yes" : "No")}");
         }
 
 
@@ -97,6 +98,15 @@ namespace Assignment_3
             return this.MemberwiseClone();
         }
 
-     
+
+
+        public abstract double CalculateFinalPrice();
+
+        public virtual void BookTicket()
+        {
+            IsBooked = true ;
+  
+        }
+
     }
 }

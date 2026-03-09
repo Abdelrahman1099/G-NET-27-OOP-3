@@ -37,5 +37,8 @@ namespace Assignment_3
         }
 
 
+
+        public override double CalculateFinalPrice() => (double)_Price * 1.14;
+
     }
 }

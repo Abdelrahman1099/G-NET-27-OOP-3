@@ -32,5 +32,9 @@ namespace Assignment_3
         {
             Console.WriteLine($"[Ticket #{TicketId}] {MovieName} | Standard | Seat: {_SeatNumber} | Price: {_Price} | After Tax: {_Price * 1.14m} | Booked: {(IsBooked ? "Yes" : "No")}");
         }
+
+
+        public override double CalculateFinalPrice() => (double)_Price * 1.14;
+
     }
 }
