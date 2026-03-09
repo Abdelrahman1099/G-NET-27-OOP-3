@@ -273,10 +273,10 @@ namespace Assignment_3
             Console.WriteLine("--- Extension Method: Total Revenue ---");
             Console.WriteLine($"Total Revenue: {tickets.CalculateTotalRevenue()}");
 
-            myCinema.CloseCinema();
+            myCinema.CloseCinema(); 
 
             #endregion
 
-        }
+        } 
     }
 } 
